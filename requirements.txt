@@ -1,8 +1,6 @@
 pandas
 streamlit
-cv2
+opencv-python-headless
 pyzbar
-google
-beautifulsoup4
-flask
 streamlit_webrtc
+matplotlib

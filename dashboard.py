@@ -4,14 +4,16 @@ import json
 import streamlit as st
 import utils
 
+BASE_URL='https://barcode-2b4ufemqia-lz.a.run.app'
+
 
 def get_all_products():
-    response = requests.get('http://127.0.0.1:5000/products')
+    response = requests.get(BASE_URL+'/products')
     return json.loads(response.content)
 
 
 def remove_product(barcode_id):
-    res = requests.delete('http://127.0.0.1:5000/removeproduct', json={'barcode_id': barcode_id})
+    res = requests.delete(BASE_URL+'/removeproduct', json={'barcode_id': barcode_id})
     st.text(res.content)
     st.experimental_singleton.clear()
 
